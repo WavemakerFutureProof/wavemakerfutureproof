@@ -201,12 +201,12 @@ class Template extends React.Component {
     render(){
         return (
             <div className = "main_container" style = {{display: this.state.is404PagePresent}}>
-                <NavBar
+                {/* <NavBar
                     showLoggedInImage = {this.state.displayLoggedInAvatar}
                     loginOrLogout = {this.state.loginOrLogout}
                     loginHref = {this.state.loginHref}
                     userProfileLink = {this.state.userProfileLink}
-                />
+                /> */}
                 <Header 
                     image = {this.props.image}
                     imageTab = {this.props.imageTab}

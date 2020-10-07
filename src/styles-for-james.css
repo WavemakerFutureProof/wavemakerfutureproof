@@ -23,6 +23,8 @@
         background-size: cover;
     }
 }
+
+
 .imageTextContainer{
     text-shadow: 5px 5px 5px #545454;
     animation: slideIn 2s ease-in-out;

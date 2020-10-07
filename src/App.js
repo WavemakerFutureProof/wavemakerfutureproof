@@ -337,14 +337,14 @@ class App extends React.Component{
     return(
       <div className="App">
         <Router>
-          <Route exact path = "/home" component = {Home}/>
+          {/* <Route exact path = "/home" component = {Home}/> */}
           <ScrollToTop>
-              <NavBar
+              {/* <NavBar
                 showLoggedInImage = {this.state.displayLoggedInAvatar}
                 loginOrLogout = {this.state.loginOrLogout}
                 loginHref = {this.state.loginHref}
                 userProfileLink = {this.state.userProfileLink}
-              />
+              /> */}
               <Template404 display404 = {this.state.displayUnknown404}/>
               <div>
                 <div style = {{display: this.state.showTemplate}}>

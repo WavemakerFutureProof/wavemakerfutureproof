@@ -125,12 +125,12 @@ class Home extends React.Component{
     render(){
         return (
             <Container>
-                <NavBar
+                {/* <NavBar
                     showLoggedInImage = {this.state.displayLoggedInAvatar}
                     loginOrLogout = {this.state.loginOrLogout}
                     loginHref = {this.state.loginHref}
                     userProfileLink = {this.state.userProfileLink}
-                />
+                /> */}
                 <IntroContainer>
                     <LogoImage src = {logo} alt = {logo} />
                     <MeaningContainer>

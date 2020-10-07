@@ -137,19 +137,19 @@ export const Wave = styled.img`
     @media only screen and (max-width: 900px){
         height: 240px;
         right: -100px;
-        top: 30px;
+        top: -5%;
         transform: rotate(60deg);
     }
     @media only screen and (min-width: 900px) and (max-width: 1600px){
         height: 340px;
         right: -140px;
-        top: 60px;
+        top: -10%;
         transform: rotate(-120deg);
     }
     @media only screen and (min-width: 1600px){
         transform: rotate(60deg);
         position: absolute;
-        top: -100px;
+        top: -15%;
         right: -350px;
         height: 800px;
     }

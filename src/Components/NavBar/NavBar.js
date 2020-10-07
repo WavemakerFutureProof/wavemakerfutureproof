@@ -10,52 +10,52 @@ import logo from "../../Images/logo.svg";
 
 
 class NavBar extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            showMenu: false,
-            displayMenu: "-600px",
-            hamburgerShow: "0px",
-            crossShow: "translateX(-600px)"
-        }
-        this.showMenu = this.showMenu.bind(this);
-        this.closeMenu = this.closeMenu.bind(this);
+    // constructor(props){
+        // super(props);
+        // this.state = {
+        //     showMenu: false,
+        //     displayMenu: "-600px",
+        //     hamburgerShow: "0px",
+        //     crossShow: "translateX(-600px)"
+        // }
+        // this.showMenu = this.showMenu.bind(this);
+        // this.closeMenu = this.closeMenu.bind(this);
 
 
-        this.wrapperRef = React.createRef();
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-    }
-    componentDidMount(){
-        document.addEventListener("mousedown", this.handleClickOutside);
-    }
-    componentWillUnmount(){
-        document.removeEventListener("mousedown", this.handleClickOutside);
-    }
-    handleClickOutside(event){
-        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
-            if(this.state.displayMenu === "40px"){
-                this.closeMenu()
-            }
-          }
-    }
-    showMenu = () => {
-        this.setState({
-            displayMenu: "40px",
-            crossShow: "translateX(0)",
-            hamburgerShow: "-600px"
-        })
-    }
-    closeMenu = () => {
-        this.setState({
-            displayMenu: "-600px",
-            hamburgerShow: "0px",
-            crossShow: "translateX(-600px)"
-        })
-    }
+        // this.wrapperRef = React.createRef();
+        // this.handleClickOutside = this.handleClickOutside.bind(this);
+    // }
+    // componentDidMount(){
+    //     document.addEventListener("mousedown", this.handleClickOutside);
+    // }
+    // componentWillUnmount(){
+    //     document.removeEventListener("mousedown", this.handleClickOutside);
+    // }
+    // handleClickOutside(event){
+    //     if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+    //         if(this.state.displayMenu === "40px"){
+    //             this.closeMenu()
+    //         }
+    //       }
+    // }
+    // showMenu = () => {
+    //     this.setState({
+    //         displayMenu: "40px",
+    //         crossShow: "translateX(0)",
+    //         hamburgerShow: "-600px"
+    //     })
+    // }
+    // closeMenu = () => {
+    //     this.setState({
+    //         displayMenu: "-600px",
+    //         hamburgerShow: "0px",
+    //         crossShow: "translateX(-600px)"
+    //     })
+    // }
     render(){
         return(
             <div>
-                <MenuContainer onClick = {this.handleClickOutside}>
+                {/* <MenuContainer onClick = {this.handleClickOutside}>
                     <ContentContainer>
                         <NavImgContainer>
                             <a href = "https://dev.wavemakerfutureproof.co.uk/"><NavImg src = {logo} alt = "wavemaker home page" /></a>
@@ -89,7 +89,7 @@ class NavBar extends React.Component{
                         </MenuListText>
                         
                     </ContentContainer>
-                </MenuContainer>
+                </MenuContainer> */}
             </div>
         )
     }
