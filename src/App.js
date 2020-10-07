@@ -61,25 +61,25 @@ class App extends React.Component{
     // this.checkIfUserIsLoggedIn();
     // this.quizHasNotBeenCompleted();
 
-    let loginURL = 'https://seanrs97.github.io/jsonData/userProfile.json';
+    // let loginURL = 'https://seanrs97.github.io/jsonData/userProfile.json';
 
-    const loginSelf = this;
-    fetch(loginURL).then(response => {
-      if(response.ok){
-        response.json().then(data => {    
-          loginSelf.setState({
-              nickname: data[0].data.nickname,
-              quizzesCompleted: data[0].data.quizzesCompleted,
-              profilePicture: data[0].data.profilePicture,
-          })
-        });
-        this.setState({
-            status: response.status
-        });
-      }
-    });
+    // const loginSelf = this;
+    // fetch(loginURL).then(response => {
+    //   if(response.ok){
+    //     response.json().then(data => {    
+    //       loginSelf.setState({
+    //           nickname: data[0].data.nickname,
+    //           quizzesCompleted: data[0].data.quizzesCompleted,
+    //           profilePicture: data[0].data.profilePicture,
+    //       })
+    //     });
+    //     this.setState({
+    //         status: response.status
+    //     });
+    //   }
+    // });
 
-    let baseURL = 'https://seanrs97.github.io/jsonData/';
+    let baseURL = 'https://wavemakerfutureproof.github.io/content_data/';
     let params = (new URL(document.location)).searchParams;
     
     let myURL;
@@ -108,6 +108,7 @@ class App extends React.Component{
       fetch(myURL).then(response => {
         if(response.ok){
           response.json().then(data => {
+            console.log("RESPONSE", data)
             self.setState({
               jsonData: data[0]
             })
@@ -136,55 +137,55 @@ class App extends React.Component{
     }
 
 
-    let navURL = 'https://seanrs97.github.io/navData/';
-    let navParams = (new URL(document.location)).searchParams;
-    let myNavURL;
-    if (params.get("navPage")===null) {
-      this.setState({
-        showHome: "block",
-        showNavTemplate: "none"
-      });
-    } else {
-      myNavURL = `${navURL}${navParams.get("navPage")}.json`;
-      this.setState({
-        showHome: "none",
-        showNavTemplate: "block"
-      })
-    }
+    // let navURL = 'https://seanrs97.github.io/navData/';
+    // let navParams = (new URL(document.location)).searchParams;
+    // let myNavURL;
+    // if (params.get("navPage")===null) {
+    //   this.setState({
+    //     showHome: "block",
+    //     showNavTemplate: "none"
+    //   });
+    // } else {
+    //   myNavURL = `${navURL}${navParams.get("navPage")}.json`;
+    //   this.setState({
+    //     showHome: "none",
+    //     showNavTemplate: "block"
+    //   })
+    // }
 
-    if(navParams.get("navPage") !== null){
-      myNavURL = `${navURL}${navParams.get("navPage")}.json`;
-      this.setState({
-        showHome: "none",
-        showNavTemplate: "block"
-      });
-      const navSelf = this;
-      fetch(myNavURL).then(response => {
+    // if(navParams.get("navPage") !== null){
+    //   myNavURL = `${navURL}${navParams.get("navPage")}.json`;
+    //   this.setState({
+    //     showHome: "none",
+    //     showNavTemplate: "block"
+    //   });
+    //   const navSelf = this;
+    //   fetch(myNavURL).then(response => {
   
-        console.log("RESPONSE", response);
-        if(response.url === undefined){
-          console.log("FJC<")
-        }
-        if(response.ok){
-          response.json().then(data => {  
-            navSelf.setState({
-              navData: data
-            })
-          });
-          this.setState({
-            display404: "none",
-            displayFooter404: "block",
-            displayUnknown404: "none"
-          })
-        } else {
-          this.setState({
-            display404: "block",
-            displayFooter404: "block",
-            displayUnknown404: "block"
-          })
-        }
-      });
-    }
+    //     console.log("RESPONSE", response);
+    //     if(response.url === undefined){
+    //       console.log("FJC<")
+    //     }
+    //     if(response.ok){
+    //       response.json().then(data => {  
+    //         navSelf.setState({
+    //           navData: data
+    //         })
+    //       });
+    //       this.setState({
+    //         display404: "none",
+    //         displayFooter404: "block",
+    //         displayUnknown404: "none"
+    //       })
+    //     } else {
+    //       this.setState({
+    //         display404: "block",
+    //         displayFooter404: "block",
+    //         displayUnknown404: "block"
+    //       })
+    //     }
+    //   });
+    // }
   }
   // componentDidUpdate(){
   //   this.checkIfQuizIsComplete();

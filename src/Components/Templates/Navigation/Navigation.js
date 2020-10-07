@@ -14,6 +14,14 @@ class Navigation extends React.Component {
                             </div>
                         </a>
                     )}
+                    {!!this.props.backNavigation && this.props.backNavigation.map((content) =>
+                        <a className = "back" href = {content.link} key = {content.link}>
+                            <div>
+                                <h1> Return to </h1>
+                                <span className = "link"> {content.text} </span>
+                            </div>
+                        </a>
+                    )}
                     {!!this.props.nextNavigation && this.props.nextNavigation.map((content) =>
                         <a className = "next" href = {content.link} key = {content.link}>
                             <div>

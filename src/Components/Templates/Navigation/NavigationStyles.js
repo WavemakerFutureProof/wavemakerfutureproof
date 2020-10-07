@@ -9,27 +9,29 @@ export const ContentContainer = styled.div`
     color: white;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "one three";
-    padding: 20px 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "one two three";
+    padding: 60px 0;
     a{
         color: white;
         text-decoration: none;
     }
     h1{
-        font-size: 2.8em;
+        font-size: 2.4em;
         color: white;
+        line-height: 1.2em;
+        padding-bottom: 14px;
         @media only screen and (min-width: 2200px){
-            font-size: 5em;
+            font-size: 3.6em;
         }
         @media only screen and (min-width: 1600px) and (max-width: 2200px){
-            font-size: 3.8em;
+            font-size: 3em;
         }
         @media only screen and (max-width: 960px) and (min-width: 760px){
             font-size: 2.2em;
         }
         @media only screen and (max-width: 760px) and (min-width: 630px){
-            font-size: 1.8em;
+            font-size: 1.4em;
         }
         @media only screen and (max-width: 400px) and (min-width: 300px){
             font-size: 2.3em;
@@ -41,14 +43,15 @@ export const ContentContainer = styled.div`
     .link{
         color: white;
         text-decoration: none;
+        font-size: 1.1em;
         &:hover{
             text-decoration: underline;
         }
         @media only screen and (min-width: 2200px){
-            font-size: 1.8em;
+            font-size: 1.6em;
         }
         @media only screen and (min-width: 1600px) and (max-width: 2200px){
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
         @media only screen and (max-width: 960px) and (min-width: 760px){
             font-size: 1em;
@@ -66,13 +69,24 @@ export const ContentContainer = styled.div`
             }
         }
     }
+    .back{
+        margin-left: auto;
+        margin-right: auto;
+        div{
+            @media only screen and (max-width: 630px){
+                border-bottom: 2px solid white;
+                padding-bottom: 30px;
+                padding-top: 30px;
+            }
+        }
+    }
     .next{
         margin-left: auto;
         margin-right: 0;
         grid-area: three;
         div{
             @media only screen and (max-width: 630px){
-                padding-top: 10px;
+                padding-top: 30px;
             }
         }
     }
