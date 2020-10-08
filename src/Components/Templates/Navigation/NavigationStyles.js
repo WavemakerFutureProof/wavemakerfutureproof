@@ -11,10 +11,16 @@ export const ContentContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "one two three";
-    padding: 60px 0;
+    padding: 20px 0;
     a{
         color: white;
         text-decoration: none;
+        padding: 40px 20px;
+        width: 90%;
+        @media only screen and (max-width: 1100px) and (min-width: 750px){
+            padding: 20px 20px;
+            border-radius: 20px;
+        }
     }
     h1{
         font-size: 2.4em;
@@ -72,6 +78,10 @@ export const ContentContainer = styled.div`
     .back{
         margin-left: auto;
         margin-right: auto;
+        background: rgba(15,146,191, 0.8);
+        @media only screen and (max-width: 630px){
+            background: none;
+        }
         div{
             @media only screen and (max-width: 630px){
                 border-bottom: 2px solid white;

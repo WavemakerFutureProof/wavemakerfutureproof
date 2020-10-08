@@ -40,8 +40,9 @@ class App extends React.Component{
       userProfileLink: "",
       quizDescription: "",
 
-      displayUnknown404: "block",
+      displayUnknown404: "none",
       displayTemplate404: "none",
+      displayFooter404: "none",
 
       isLoggedIn: localStorage.getItem("isLoggedIn") || 0
     }
@@ -355,7 +356,7 @@ class App extends React.Component{
               </div>
               <div>
                 <div>
-                  <NavTemplate {...this.state.navData}/>
+                  {/* <NavTemplate {...this.state.navData}/> */}
                 </div>
                 <Template404 display404 = {this.state.display404} />
               </div>

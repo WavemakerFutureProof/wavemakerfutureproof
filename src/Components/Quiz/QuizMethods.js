@@ -144,7 +144,9 @@ export const submitQuiz = async (component) => {
             // PLAYER STATS
             const pointsWon = component.state.quizPoints;
             const numOfQuestions = component.state.questions.length;
-            const pointsNeededToWin = numOfQuestions * 10;
+            const pointsNeededToWin = component.props.pointsNeeded;
+
+            console.log("points needed", pointsNeededToWin);
 
             console.log("You scored " + submit.data.points)
             let playerResult = "Sorry you didn't earn any points this time, please try again!";
@@ -191,7 +193,7 @@ export const submitQuiz = async (component) => {
             }
             component.setState({
                 endScore: component.state.quizPoints,
-                endNumOfQuestions: numOfQuestions * 10,
+                endNumOfQuestions: component.props.pointsNeeded,
                 endNumOfAnsweredQuestions: playerStats.numberOfAnsweredQuestions,
                 success: playerResult,
                 successMessage: successMessage,
@@ -219,76 +221,7 @@ export const submitQuiz = async (component) => {
         console.log("ERROR SUBMITTING QUIZ", e);
     }
 }
-export const end  = (component) => {
 
-    // let playerResult = "failed";
-    // let successMessage = "Please try again!";
-
-    // console.log("answered questions", component.state.answeredQuestions);
-
-    // const playerStats = {
-    //     score: component.state.score,
-    //     numberOfQuestions: component.state.numberOfQuestions,
-    //     numberOfAnsweredQuestions: component.state.numberOfAnsweredQuestions,
-    // };
-
-
-
-
-// NEEEEEED
-
-    // if(playerStats.score === playerStats.numberOfQuestions){
-    //     playerResult = "passed"
-    //     successMessage = "Well done, you can now move on!"
-    //     setTimeout(() => {
-    //         component.setState({
-    //             showConfetti: "block"
-    //         });
-    //     }, 800)
-    // }
-    // component.setState({
-    //     endScore: playerStats.score,
-    //     endNumOfQuestions: playerStats.numberOfQuestions,
-    //     endNumOfAnsweredQuestions: playerStats.numberOfAnsweredQuestions,
-    //     endNumberOfCorrectAnswers: playerStats.correctAnswers,
-    //     endNumberOfWrongAnswers: playerStats.wrongAnswers,
-    //     success: playerResult,
-    //     successMessage: successMessage,
-
-    // });
-
-
-
-
-
-
-
-    // component.setState({
-    //     isSummaryDisplayed: "visible"
-    // })
-    // component.setState({
-    //     showQuestions: "none",
-    //     numberOfAnsweredQuestions: 0,
-    //     currentQuestionIndex: playerStats.numberOfQuestions - 1,
-    //     time: {
-    //         minutes: 0,
-    //         seconds: 0
-    //     },
-    //     showSummary: "appear .6s linear forwards",
-    //     displayQuiz: "translateX(-100%) scale(0)",
-    // });
-    // clearInterval(component.interval);
-
-
-
-    // NEEEEEEEEEEEEEEEEEEEEEEED
-
-    // if(component.state.successMessage === undefined || component.state.successMessage === "passed"){
-    //     component.setState({
-    //         unlockContent: "block"
-    //     })
-    // }
-}
 export const returnHome = (component) => {
     component.setState({
         quizShow: "none",

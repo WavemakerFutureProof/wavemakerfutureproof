@@ -31,10 +31,10 @@ export const DisplayContent = styled.div`
         h1{
             color: white;
             line-height: 1.2em;
-            padding-bottom: 60px;
-            font-size: 5em;
+            text-align: center;
+            font-size: 4em;
             @media only screen and (min-width: 2000px){
-                font-size: 8em;
+                font-size: 6em;
             }
             @media only screen and (max-width: 600px){
                 font-size: 3.6em;
@@ -53,7 +53,7 @@ export const DisplayContent = styled.div`
         button{
             margin: 0 auto;
             display: block;
-            margin-top: 100px;
+            margin-top: 50px;
             border: none;
             background: white;
             font-size: 2.6em;

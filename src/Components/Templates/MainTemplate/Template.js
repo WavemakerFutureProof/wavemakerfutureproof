@@ -172,6 +172,31 @@ class Template extends React.Component {
                 quizQuestions: quiz.data.questions,
                 // answerId: quiz.data.questions
             });
+
+            // console.log("QUIZ", this.state.quiz.data.questions);
+            let totalPoints = 0;
+            let arr = [];
+
+            {!!this.state.quiz.data.questions && this.state.quiz.data.questions.map((question) => {
+                console.log("Question", question.maxChoices[0].points);
+                 totalPoints = (totalPoints += question.maxChoices[0].points);
+
+                 arr.push(parseInt(question.maxChoices[0].points));
+
+
+                //  console.log(multiply(totalPoints));
+                // console.log("Total Points", totalPoints);
+            })};
+
+            console.log("Array", arr);
+
+            // arr.reduce((a, b) => a + b, 0);
+
+            this.setState({
+                totalAmountOfPoints: arr.reduce((a, b) => a + b, 0)
+            });
+
+            console.log(this.state.totalAmountOfPoints);
             
             if(this.state.quizzesCompleted[0].indexOf(this.state.quizId) >  -1){
                 this.setState({
@@ -226,18 +251,18 @@ class Template extends React.Component {
                     // quiz = {this.props.quiz} 
                     quizColour = {this.props.headerColour} 
                     quizDescription = {this.state.quizDescription}
-                    buttonDisabled = {this.state.buttonDisabled}
-                    buttonHidden = {this.state.buttonHidden}
+                    // buttonDisabled = {this.state.buttonDisabled}
+                    // buttonHidden = {this.state.buttonHidden}
                     buttonCursor = {this.state.buttonCursor}
                     quizNotFound = {this.state.quizNotFound}
                     doesBadgeExist = {this.state.userBadges}
+                    pointsNeeded = {this.state.totalAmountOfPoints}
                 />
 
                 <DisplayContent style = {{background: this.props.headerColour, display: this.state.displayLoginMessage}}>
                     <div>
-                        <h1> Want to view more content? </h1>
-                        <p className = "content-desc"> I'm afraid you'll need to login to view anymore content. Please click on the button below to login or sign up!</p>
-                        <button onClick = {this.proceedToLoginPage}><a id = "quiz" href = {this.state.loginUrl} >Login</a></button>
+                        <h1> Please login to view resources & further links </h1>
+                        <button onClick = {this.proceedToLoginPage}><a id = "quiz" href = "https://wavemakerfutureproof.co.uk" >Login</a></button>
                     </div>
                 </DisplayContent>
 

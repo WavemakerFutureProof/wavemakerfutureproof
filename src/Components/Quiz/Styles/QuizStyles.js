@@ -818,7 +818,8 @@ export const OptionsContainer = styled.div`
     width: 85%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(2, 1fr);
     margin: 0 auto;
     .option{
         background: rgba(71, 187, 230, 0.6);
@@ -830,7 +831,7 @@ export const OptionsContainer = styled.div`
         color: white;
         cursor: pointer;
         margin: 10px;
-        padding: 10px 20px;
+        padding: 40px 20px;
         transition: .3s linear all;
         transition: .3s all;
         font-size: 1.2em;
@@ -872,7 +873,6 @@ export const OptionsContainer = styled.div`
     }
     @media only screen and (max-width: 1500px) and (min-width: 800px){
         width: 86%;
-        grid-template-rows: repeat(2, 50%);
         grid-gap: 16px;
         margin-top: 22px;
     }
