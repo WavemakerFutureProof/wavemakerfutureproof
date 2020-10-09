@@ -118,9 +118,9 @@ class Template extends React.Component {
                 loginHref: e.urlWithRedirect,
                 userProfileLink: e.urlWithRedirect,
     
-                // buttonDisabled: true,
-                // buttonHidden: "0.5",
-                buttonCursor: "auto",
+                buttonDisabled: true,
+                buttonHidden: "0.5",
+                // buttonCursor: "auto",
                 quizDescription: "Please login to play the quiz and earn a badge and XP!"
             });
             this.setState({
@@ -173,7 +173,7 @@ class Template extends React.Component {
                 // answerId: quiz.data.questions
             });
 
-            // console.log("QUIZ", this.state.quiz.data.questions);
+            console.log("QUIZ", this.state.quiz.data.questions);
             let totalPoints = 0;
             let arr = [];
 
@@ -251,8 +251,8 @@ class Template extends React.Component {
                     // quiz = {this.props.quiz} 
                     quizColour = {this.props.headerColour} 
                     quizDescription = {this.state.quizDescription}
-                    // buttonDisabled = {this.state.buttonDisabled}
-                    // buttonHidden = {this.state.buttonHidden}
+                    buttonDisabled = {this.state.buttonDisabled}
+                    buttonHidden = {this.state.buttonHidden}
                     buttonCursor = {this.state.buttonCursor}
                     quizNotFound = {this.state.quizNotFound}
                     doesBadgeExist = {this.state.userBadges}

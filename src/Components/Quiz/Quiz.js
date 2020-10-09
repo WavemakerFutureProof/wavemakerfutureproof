@@ -58,13 +58,14 @@ class Quiz extends React.Component {
              backgroundChange: "#23758b",
              homeAppear: "",
              doesQuizExist: "",
-             questionDisplay: "",
+             questionDisplay: "translateX(0)",
              showTimeMessage: "translateX(-100%)",
 
              answeredQuestions: [],
 
              quizShow: "",
-             quizScale: "0",
+             quizScale: "0%",
+             quizVisibility: "hidden",
 
              showMainOverlay: "none",
              overlayOpacity: "0",
@@ -78,7 +79,9 @@ class Quiz extends React.Component {
              quizBadgeShowVisibility: "hidden",
              quizPassed: false,
 
-             quizPoints: 0
+             quizPoints: 0,
+
+             displayAbout: "0%"
         }
         this.interval = null
     }
@@ -152,28 +155,9 @@ class Quiz extends React.Component {
         console.log("QUIZ STARTED");
         this.setState({
             displayAbout: "100%",
-            quizScale: "100%"
+            quizScale: "100%",
+            quizVisibility: "visible"
         });
-
-
-        // let quizScaleSize;
-        // if(window.innerWidth < 580){
-        //     quizScaleSize = "100%"
-        // } else if(window.innerWidth >= 580 && window.innerWidth <= 1400) {
-        //     quizScaleSize = "94%"
-        // }else {
-        //     quizScaleSize = "88%"
-        // }
-        // this.setState({
-        //     showSummary: "dissapear .6s linear forwards",
-        // });
-        // setTimeout(() => {
-        //     this.setState({
-        //         isSummaryDisplayed: "hidden",
-        //         quizScale: quizScaleSize,
-        //         displayAbout: "100%",
-        //     });
-        // }, 500);
     }
     startTimer = () => {
         const countdownTime = Date.now() + 60000;
@@ -284,7 +268,7 @@ class Quiz extends React.Component {
             }), () => {
                 if(this.state.nextQuestion === undefined){
                     this.setState({
-                        questionDisplay: "translateX(900%)"
+                        questionDisplay: "translateX(900%)",
                     });
                     // end(this);
                     submitQuiz(this);
@@ -384,7 +368,10 @@ class Quiz extends React.Component {
             displayQuiz: "translateX(0) scale(1)",
 
             quizShow: "none",
-            quizScale: "0",
+            quizScale: "0%",
+            quizVisibility: "hidden", 
+
+
             showMainOverlay: "none",
 
             overlayVisibility: "hidden",
@@ -398,14 +385,18 @@ class Quiz extends React.Component {
             displayQuiz: "translateX(0) scale(1)",
             showOverlay: "none",
             quizShow: "none",
-            quizScale: "0",
+            quizScale: "0%",
+            quizVisibility: "hidden",
+
             showMainOverlay: "none",
         })
     }
     returnHome = () => {
         this.setState({
             quizShow: "none",
-            quizScale: "0",
+            quizScale: "0%",
+            quizVisibility: "hidden",
+
             showMainOverlay: "none",
             overlayVisibility: "hidden",
             overlayOpacity: 0
@@ -439,7 +430,7 @@ class Quiz extends React.Component {
                     quizDescription = {this.props.quizDescription}
                 />
                 <ContentWrapper className = "content-wrapper" onScroll = {this.handleScroll} style = {{animation: this.state.doesQuizExist, display:this.state.entireQuizVisibility}}>
-                    <QuizAndSummaryContainer id = "quizAndSummary" style = {{height: this.state.quizScale}}>
+                    <QuizAndSummaryContainer id = "quizAndSummary" style = {{height: this.state.quizScale, visibility: this.state.quizVisibility}}>
                         <AboutTemplate
                             quizColour = {this.props.quizColour}
                             displayAbout = {this.state.displayAbout}
@@ -460,6 +451,7 @@ class Quiz extends React.Component {
                                     quizColour = {this.props.quizColour}
                                     quitQuiz = {this.quitQuiz}
                                     questionDisplay = {this.state.questionDisplay}
+                                    questionVisibility = {this.state.questionVisibility}
                                     optionDisabled = {this.state.optionDisabled}
                                     handleOptionClick = {this.handleOptionClick}
                                     showTimeMessage = {this.state.showTimeMessage}

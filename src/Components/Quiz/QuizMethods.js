@@ -225,7 +225,7 @@ export const submitQuiz = async (component) => {
 export const returnHome = (component) => {
     component.setState({
         quizShow: "none",
-        quizScale: "0",
+        quizScale: "0%",
         showMainOverlay: "none",
         overlayVisibility: "hidden",
         overlayOpacity: 0
