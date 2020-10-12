@@ -78,7 +78,6 @@ export const ContentContainer = styled.div`
     .back{
         margin-left: auto;
         margin-right: auto;
-        background: rgba(15,146,191, 0.8);
         @media only screen and (max-width: 630px){
             background: none;
         }

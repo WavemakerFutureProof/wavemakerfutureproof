@@ -80,7 +80,6 @@ export const Home = styled.div`
             button{
                 border: 4px solid white;
                 cursor: pointer;
-                background: linear-gradient(90deg,rgba(11,146,191, 0.5),rgba(42,181,227, 0.5));
                 border-radius: 8px;
                 font-size: 2.2em;
                 padding: 20px 50px;
@@ -88,7 +87,7 @@ export const Home = styled.div`
                 transition: .4s all;
                 font-weight: 600;
                 &:hover{
-                    background: linear-gradient(90deg,rgba(11,146,191, 1),rgba(42,181,227, 1));
+                    
                 }
                 @media only screen and (max-width: 430px){
                     width: 100%;

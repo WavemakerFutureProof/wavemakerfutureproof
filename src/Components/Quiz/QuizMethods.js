@@ -183,6 +183,7 @@ export const submitQuiz = async (component) => {
                 }
                 component.setState({
                     isSummaryDisplayed: "visible",
+                    summaryOpacity: "1",
                     showSummary: "appear .6s linear forwards",
                 });
             } else {
@@ -200,7 +201,8 @@ export const submitQuiz = async (component) => {
             });
 
             component.setState({
-                isSummaryDisplayed: "visible"
+                isSummaryDisplayed: "visible",
+                summaryOpacity: "1",
             })
             component.setState({
                 showQuestions: "none",
@@ -217,6 +219,9 @@ export const submitQuiz = async (component) => {
         }, 300);
 
         return submit;
+
+
+        console.log("QUIZ OUTCOME", submit)
     } catch (e) {
         console.log("ERROR SUBMITTING QUIZ", e);
     }

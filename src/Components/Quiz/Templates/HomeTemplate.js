@@ -14,7 +14,7 @@ class HomeTemplate extends React.Component {
                         <button 
                             onClick = {this.props.openAbout} 
                             disabled = {this.props.buttonDisabled}
-                            style = {{opacity: this.props.buttonHidden, cursor: this.props.buttonCursor}}
+                            style = {{opacity: this.props.buttonHidden, cursor: this.props.buttonCursor, background: this.props.buttonColour}}
                         >
                                 Start
                         </button> 

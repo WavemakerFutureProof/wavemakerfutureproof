@@ -18,12 +18,12 @@ class QuizFeatures extends React.Component {
                     <p style = {{transform: this.props.questionDisplay}} className = "numberOfQuestionsContainer">
                         <span className = "qNumber">
                             Question {currentQuestionIndex + 1} of {numberOfQuestions}
-                        </span>
+                        </span> 
                     </p>
                     <H5 style = {{transform: this.props.questionDisplay}}> {currentQuestion.text} </H5>
-                    <OptionsContainer style = {{transform: this.props.questionDisplay}}>
+                    <OptionsContainer style = {{transform: this.props.questionDisplay, visibility: this.props.questionVisibility, opacity: this.props.questionOpacity }}>
                         {!!currentQuestion.answers && currentQuestion.answers.map((ans) =>
-                            <button id = {ans.id} key = {ans.text} style = {{transform: this.props.questionDisplay}} disabled = {!this.props.optionDisabled} className = "option" onClick = {this.props.handleOptionClick}> {ans.text}</button>
+                            <button id = {ans.id} key = {ans.text} style = {{transform: this.props.questionDisplay, opacity: this.props.questionVisibility}} disabled = {!this.props.optionDisabled} className = "option" onClick = {this.props.handleOptionClick}> {ans.text}</button>
                         )}
                     </OptionsContainer>
                     <LifelineContainer style = {{transform: this.props.questionDisplay}}>

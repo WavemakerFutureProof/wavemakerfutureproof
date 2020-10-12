@@ -59,6 +59,9 @@ class Quiz extends React.Component {
              homeAppear: "",
              doesQuizExist: "",
              questionDisplay: "translateX(0)",
+             questionVisibility: "0",
+
+
              showTimeMessage: "translateX(-100%)",
 
              answeredQuestions: [],
@@ -210,7 +213,9 @@ class Quiz extends React.Component {
                 displayAbout: "0%",
                 
                 isSummaryDisplayed: "hidden",
-                quizPoints: 0
+                quizPoints: 0,
+
+                questionVisibility: "1",
             }); 
         }, 800);
         showTargetElement(this);
@@ -242,6 +247,7 @@ class Quiz extends React.Component {
             displayQuiz: "translateX(0) scale(1)",
             showConfetti: "none",
             questionDisplay: "translateX(0)",
+            questionVisibility: "1",
 
             quizPoints: 0,
             answeredQuestions: []
@@ -254,11 +260,13 @@ class Quiz extends React.Component {
     handleOptionClick = (e) => {
         this.setState({
             questionDisplay: "translateX(350%)",
+            questionVisibility: "0",
             answeredQuestions: [...this.state.answeredQuestions, parseInt(e.target.id)]
         });
         setTimeout(() => {
             this.setState({
-                questionDisplay: "translateX(0)"
+                questionDisplay: "translateX(0)",
+                questionVisibility: "1",
             });
             this.setState(prevState => ({
                 score: prevState.score + 1,
@@ -269,6 +277,7 @@ class Quiz extends React.Component {
                 if(this.state.nextQuestion === undefined){
                     this.setState({
                         questionDisplay: "translateX(900%)",
+                        questionVisibility: "0",
                     });
                     // end(this);
                     submitQuiz(this);
@@ -375,7 +384,9 @@ class Quiz extends React.Component {
             showMainOverlay: "none",
 
             overlayVisibility: "hidden",
-            overlayOpacity: 0
+            overlayOpacity: 0,
+
+            questionVisibility: "0",
         });
         hideTargetElement(this);
     }
@@ -428,11 +439,12 @@ class Quiz extends React.Component {
                     buttonCursor = {this.props.buttonCursor}
                     quizColour = {this.props.quizColour}
                     quizDescription = {this.props.quizDescription}
+                    buttonColour = {this.props.quizColour}
                 />
                 <ContentWrapper className = "content-wrapper" onScroll = {this.handleScroll} style = {{animation: this.state.doesQuizExist, display:this.state.entireQuizVisibility}}>
                     <QuizAndSummaryContainer id = "quizAndSummary" style = {{height: this.state.quizScale, visibility: this.state.quizVisibility}}>
                         <AboutTemplate
-                            quizColour = {this.props.quizColour}
+                            quizColour = {this.props.headerColour}
                             displayAbout = {this.state.displayAbout}
                             exitAboutPage = {this.exitAboutPage}
                             startQuiz = {this.startQuiz}
@@ -459,6 +471,8 @@ class Quiz extends React.Component {
                                     currentQuestionIndex = {this.state.currentQuestionIndex}
                                     numberOfQuestions = {this.state.numberOfQuestions}
                                     time = {this.state.time}
+
+                                    questionVisibility = {this.state.questionVisibility}
                                 />
                             </Container>
                         </div>

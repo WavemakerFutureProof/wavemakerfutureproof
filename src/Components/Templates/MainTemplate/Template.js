@@ -257,6 +257,8 @@ class Template extends React.Component {
                     quizNotFound = {this.state.quizNotFound}
                     doesBadgeExist = {this.state.userBadges}
                     pointsNeeded = {this.state.totalAmountOfPoints}
+                    headerColour2 = {this.props.headerColour2}
+                    headerColour = {this.props.headerColour}
                 />
 
                 <DisplayContent style = {{background: this.props.headerColour, display: this.state.displayLoginMessage}}>
