@@ -257,8 +257,10 @@ class Template extends React.Component {
                     quizNotFound = {this.state.quizNotFound}
                     doesBadgeExist = {this.state.userBadges}
                     pointsNeeded = {this.state.totalAmountOfPoints}
-                    headerColour2 = {this.props.headerColour2}
+                    headerColour2 = {this.props.headerColour}
                     headerColour = {this.props.headerColour}
+
+                    badgeForQuiz = {this.props.badgeForQuiz}
                 />
 
                 <DisplayContent style = {{background: this.props.headerColour, display: this.state.displayLoginMessage}}>
@@ -270,7 +272,7 @@ class Template extends React.Component {
 
                 <UnlockableContent style = {{display: this.state.displayLoginContent}}>
                     <HideContent style = {{display: this.props.display}}></HideContent>
-                    <Resources resources = {this.props.resources}/>
+                    <Resources resources = {this.props.resources} headerColour = {this.props.headerColour} singleColour = {this.props.singleColour}/>
                 </UnlockableContent>
 
                 <Navigation {...this.props}/>

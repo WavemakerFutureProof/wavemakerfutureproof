@@ -6,7 +6,7 @@ export const Container = styled.div`
 export const ContentContainer = styled.div`
 `
 export const Header = styled.div`
-    background: linear-gradient(90deg,rgb(11,146,191), rgb(42,181,227));
+    background: ${props => props.headerColour};
     color: white;
     div{
         width: 90%;
@@ -218,26 +218,26 @@ export const WatchAndLearn = styled.div`
                 }
             }
             &:nth-child(1n){
-                background: #2AB5E3;
+                background: ${props => props.singleColour};
 
             }
             &:nth-child(2n){
-                background: #24AEDC;
+                background: ${props => props.singleColour};
 
             }
             &:nth-child(3n){
-                background: #1EA7D5;
+                background: ${props => props.singleColour};
             }
             &:nth-child(4n){
-                background: #17A0CD;
+                background: ${props => props.singleColour};
 
             }
             &:nth-child(5n){
-                background: #1199C6;
+                background: ${props => props.singleColour};
 
             }
             &:nth-child(6n){
-                background: #0B92BF;
+                background: ${props => props.singleColour};
             }
         }
     }
@@ -261,7 +261,7 @@ export const UsefulLinks = styled.div`
             border: 1.5px solid #5c5c5c;
             border-radius: 8px;
             position: relative;
-            background: #ff6161;
+            background: white;
             overflow: hidden;
             min-height: 35vh;
             justify-content: space-between;
@@ -365,16 +365,16 @@ export const UsefulLinks = styled.div`
                 }
             }
             &:nth-child(1n){
-                background: #2AB5E3;
+                background: ${props => props.singleColour};
             }
             &:nth-child(2n){
-                background: #20A9D7;
+                background: ${props => props.singleColour};
             }
             &:nth-child(3n){
-                background: #159ECB;
+                background: ${props => props.singleColour};
             }
             &:nth-child(4n){
-                background: #0B92BF;
+                background: ${props => props.singleColour};
             }
             @media only screen and (max-width: 600px){
                 margin: 10px 0;
@@ -509,7 +509,7 @@ export const CareerPathways = styled.div`
                 }
             }
             &:nth-child(3n){
-                background: #2AB5E3;
+                background: ${props => props.singleColour};
                 h2{
                     color: white;
                 }
@@ -521,7 +521,7 @@ export const CareerPathways = styled.div`
                 }
             }
             &:nth-child(4n){
-                background: #20A9D7;
+                background: ${props => props.singleColour};
                 h2{
                     color: white;
                 }

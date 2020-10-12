@@ -93,7 +93,7 @@ class Quiz extends React.Component {
         if(prevState.quizPassed !== this.state.quizPassed){
             if(this.state.quizPassed === true){
                 console.log("quiz has been passed, badge submitted");
-                submitBadge(this);
+                submitBadge(this.state.badgeId);
             }
         }
 
@@ -143,13 +143,19 @@ class Quiz extends React.Component {
             //         isSummaryDisplayed: "visible"
             //     })
             // }, 2200);
+            getBadge(this, this.props.badgeForQuiz);
+            this.setState({
+                badgeId: "7lBmXyuXcmXXiL0BDaeP",
+     
+                quizBadgeId: this.props.badgeForQuiz
+            });
+
+            console.log("BADGEID", this.props.badgeForQuiz)
         }
     }
     componentDidMount = () => {
        getBadge(this, "7lBmXyuXcmXXiL0BDaeP");
-       this.setState({
-           badgeId: "7lBmXyuXcmXXiL0BDaeP"
-       })
+
     }
     componentWillUnmount(){
         clearInterval(this.interval);
@@ -283,7 +289,7 @@ class Quiz extends React.Component {
                     submitQuiz(this);
                     // quizBadgeWon(this);
                     setTimeout(() => {
-                        submitBadge(this);
+                        submitBadge(this.state.badgeId);
                     }, 2000);
                 } else {
                     displayQuestions(

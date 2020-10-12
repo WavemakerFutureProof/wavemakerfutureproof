@@ -7,8 +7,8 @@ class Why extends React.Component{
         return (
             <div>
                 <Banner
-                    bannerText = "Why do we use it?"
-                    bannerDesc = "Learn more about why this subject is as popular as it is today!"
+                    bannerText = {this.props.whyBannerText}
+                    bannerDesc = {this.props.whyBannerDesc}
                     bannerColour = {this.props.headerColour}
                 />
                 <MainContent 

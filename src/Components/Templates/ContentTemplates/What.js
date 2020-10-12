@@ -7,8 +7,8 @@ class What extends React.Component{
         return (
             <div>
                 <Banner
-                    bannerText = "What is it?"
-                    bannerDesc = "Learn more about this subject and how it can benefit you!"
+                    bannerText = {this.props.whatBannerText}
+                    bannerDesc = {this.props.whatBannerDesc}
                     bannerColour = {this.props.headerColour}
                 />
                 <MainContent what = {this.props.what}/>

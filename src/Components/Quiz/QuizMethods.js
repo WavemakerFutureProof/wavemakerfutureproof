@@ -92,7 +92,7 @@ export const getBadge = async (component, id) => {
             badgeName: getBadge.data.name
         });
 
-        console.log(component.state);
+        console.log("badge data ", getBadge);
         return getBadge;
     } catch (e) {
         console.log("ERROR FETCHING BADGE", e);
@@ -119,10 +119,10 @@ export const closeBadgeWon = (component) => {
         quizBadgeShowVisibility: "hidden"
     });
 }
-export const submitBadge = async (component) => {
+export const submitBadge = async (id) => {
     try {
         const sdk = window.futureproofSdk();
-        const submitBadge = await sdk.badges.submit(component.state.badgeId);
+        const submitBadge = await sdk.badges.submit(id);
 
         return submitBadge
     } catch (e) {
@@ -165,7 +165,7 @@ export const submitQuiz = async (component) => {
                 }, 400);
 
                 // BADGE
-                // console.log(component.props.doesBadgeExist);
+                console.log("BADGES", component.props.doesBadgeExist);
                 if(component.props.doesBadgeExist.includes(component.state.badgeId)){
                     console.log("Badge has already been awarded to this user")
                     component.setState({
@@ -186,6 +186,12 @@ export const submitQuiz = async (component) => {
                     summaryOpacity: "1",
                     showSummary: "appear .6s linear forwards",
                 });
+
+                submitBadge(component.props.badgeForQuiz);
+
+                // QUIZ BADGE 
+
+                console.log("QUIz badge id", component.state.quizBadgeId);
             } else {
                 console.log("Unlucky better luck next time");
                 component.setState({
@@ -218,10 +224,10 @@ export const submitQuiz = async (component) => {
             clearInterval(component.interval);
         }, 300);
 
+
+        console.log("QUIZ OUTCOME", submit);
+
         return submit;
-
-
-        console.log("QUIZ OUTCOME", submit)
     } catch (e) {
         console.log("ERROR SUBMITTING QUIZ", e);
     }

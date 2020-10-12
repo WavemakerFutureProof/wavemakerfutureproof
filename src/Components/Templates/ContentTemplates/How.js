@@ -8,8 +8,8 @@ class How extends React.Component{
         return (
             <div>
                 <Banner
-                    bannerText = "How does it work?"
-                    bannerDesc = "Time to get your hands dirty and learn how it works! "
+                    bannerText = {this.props.howBannerText}
+                    bannerDesc = {this.props.howBannerDesc}
                     bannerColour = {this.props.headerColour}
                 />
                 <MainContent 

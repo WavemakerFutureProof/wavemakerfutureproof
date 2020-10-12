@@ -24,14 +24,14 @@ class Resources extends React.Component {
             <Container>
                 {!!this.props.resources && this.props.resources.map((resource) =>
                     <ContentContainer key={uid(resource)}>
-                        <Header key = {resource.title}>
+                        <Header key = {resource.title} headerColour = {this.props.headerColour}>
                             <div>
                                 <h1 className = "content-text">{resource.title}</h1>
                                 <p> {resource.text} </p>
                             </div>
                         </Header>
                         <MainContentContainer>
-                            <WatchAndLearn>
+                            <WatchAndLearn singleColour = {this.props.singleColour}>
                                 <h1 className = "mainHeading"> Watch and Learn </h1>
                                 <p> We've scoured the interet to find the most helpful videos, games, quizzes, websites and everything in between! We hope these will help you in your educational journey!</p>
                                 <div className = "links-wrapper">
@@ -52,7 +52,7 @@ class Resources extends React.Component {
                                     )}
                                 </div>
                             </WatchAndLearn>
-                            <UsefulLinks>
+                            <UsefulLinks singleColour = {this.props.singleColour}>
                                 <h1 className = "mainHeading"> Useful Links </h1>
                                 <p> We've collected the most useful links we could find to help you in your educational journey!  </p>
                                 <div className  = "links-wrapper2">
@@ -73,7 +73,7 @@ class Resources extends React.Component {
                                     )}
                                 </div>
                             </UsefulLinks>
-                            <CareerPathways>
+                            <CareerPathways singleColour = {this.props.singleColour}>
                                 <h1 className = "mainHeading"> Career Pathways </h1>
                                 <p> Take a look at some of the career pathways that are available to you right now!</p>
                                 <div className  = "links-wrapper3">
